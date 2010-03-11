@@ -1,0 +1,20 @@
+<mtapp:widget id="entryimage-widget"
+              class="entryimage-widget",
+              label="エントリ画像">
+<mt:if name="entry_image_url">
+  <div id="entryimage-container">
+    <img src="<mt:var name="entry_image_url">" />
+    <input type="hidden" name="entryimage_id" value="<mt:var name="entry_image_id">" />
+  </div>
+  <div class="asset-list-header">
+    <a href="<mt:var name="script_url">?__mode=list_asset&amp;_type=asset&edit_field=&blog_id=<mt:var name="blog_id">&dialog_view=1&no_insert=1&amp;plugin_entry_image=1" class="add-new-asset-link mt-open-dialog" id="entryimage-setting-link" style="display:none">設定</a>
+    <a href="javascript:$('#entryimage-container').text('未設定'); $('#entryimage-setting-link').show();$('#entryimage-delete-link').hide();void(0)" style="background-image:url(<$mt:var name="static_uri"$>images/status_icons/close.gif);background-repeat:no-repeat;background-position:left center;padding-left:12px;text-decoration:none;" id="entryimage-delete-link">削除</a>
+  </div>
+<mt:else>
+  <div id="entryimage-container">未設定 <mt:var name="entry_image_url"></div>
+  <div class="asset-list-header">
+    <a href="<mt:var name="script_url">?__mode=list_asset&amp;_type=asset&edit_field=&blog_id=<mt:var name="blog_id">&dialog_view=1&no_insert=1&amp;plugin_entry_image=1" class="add-new-asset-link mt-open-dialog" id="entryimage-setting-link">設定</a>
+    <a href="javascript:$('#entryimage-container').text('未設定'); $('#entryimage-setting-link').show();$('#entryimage-delete-link').hide();void(0)" style="background-image:url(<$mt:var name="static_uri"$>images/status_icons/close.gif);background-repeat:no-repeat;background-position:left center;padding-left:12px;text-decoration:none;display:none" id="entryimage-delete-link">削除</a>
+  </div>
+</mt:if>
+</mtapp:widget>

@@ -1,0 +1,13 @@
+(function ($) {
+    var div = $("<div>").append($("<img>").attr("src", "<TMPL_VAR NAME=ASSET_URL>"));
+    div.append(
+        $("<input>").attr("type", "hidden")
+                    .attr("name", "entryimage_id")
+                    .attr("value", "<TMPL_VAR NAME=ASSET_ID>"));
+
+    $("#entryimage-container").html(div.html());
+
+    $("#entryimage-setting-link").hide();
+    $("#entryimage-delete-link").show();
+
+})(window.parent.jQuery);
